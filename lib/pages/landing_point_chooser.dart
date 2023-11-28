@@ -39,11 +39,18 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
     var points = <LandingPoint>[];
 
     for (var location in selectedMap!.locations) {
-      if (onMapOnly && location.isOnMap) {
-        points.add(location);
+      if (onMapOnly) {
+        if (location.isOnMap) {
+          points.add(location);
+        }
       } else {
         points.add(location);
       }
+    }
+
+    if (points.isEmpty) {
+      selectedLandingPoint = null;
+      return;
     }
 
     var landingPoint = points[Random().nextInt(points.length)];
@@ -60,6 +67,7 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
 
   @override
   Widget build(BuildContext context) {
+    print(onMapOnly);
     var theme = Theme.of(context);
     var textStyle = theme.textTheme.titleLarge!.copyWith(
       color: theme.colorScheme.onPrimary,
@@ -104,14 +112,17 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
               ),
             ),
           ),
+        const SizedBox(
+          height: 20,
+        ),
         if (selectedMap != null)
           InfoButton(
               url: "${selectedMap!.infoUrl}#Locations",
               text: "View map locations",
               style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorScheme.secondary,
-                foregroundColor: theme.colorScheme.onSecondary,
-              )),
+                  backgroundColor: theme.colorScheme.secondary,
+                  foregroundColor: theme.colorScheme.onSecondary)),
+        const Padding(padding: EdgeInsets.all(5)),
         if (selectedMap != null)
           ElevatedButton.icon(
             onPressed: setSelectedLandingPoint,
