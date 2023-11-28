@@ -3,7 +3,7 @@ import "package:apex_legend_chooser/lists.dart";
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
 
-import "../components/info_button.dart";
+import "../components/info_card.dart";
 import "../models/legend.dart";
 
 class LegendChooser extends StatefulWidget {
@@ -143,16 +143,14 @@ class _LegendChooserState extends State<LegendChooser> {
           ),
           const SizedBox(height: 15),
           if (selectedLegend != null)
-            Card(
-              color: theme.colorScheme.primary,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(children: [
-                  Text(selectedLegend!.name, style: legendNameTheme),
-                  const SizedBox(height: 10),
-                  InfoButton(url: selectedLegend!.infoUrl),
-                ]),
-              ),
+            InfoCard(
+              name: selectedLegend!.name,
+              infoUrl: selectedLegend!.infoUrl,
+              cardColor: theme.colorScheme.primary,
+              btnStyle: ElevatedButton.styleFrom(
+                  backgroundColor: theme.colorScheme.secondary,
+                  foregroundColor: theme.colorScheme.onSecondary),
+              textStyle: legendNameTheme,
             ),
           const SizedBox(height: 15),
           ElevatedButton.icon(

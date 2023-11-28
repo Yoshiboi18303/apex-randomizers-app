@@ -1,7 +1,6 @@
 class Weapon {
-  Weapon(this.name, this.infoUrl, this.imageUrl);
+  Weapon(this.name, this.infoUrl);
 
   final String name;
   final String infoUrl;
-  final String imageUrl;
 }

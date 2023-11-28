@@ -67,16 +67,19 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
 
   @override
   Widget build(BuildContext context) {
-    print(onMapOnly);
     var theme = Theme.of(context);
-    var textStyle = theme.textTheme.titleLarge!.copyWith(
+    var chosenPointTextStyle = theme.textTheme.titleLarge!.copyWith(
       color: theme.colorScheme.onPrimary,
     );
+    var optionTextStyle = theme.textTheme.labelLarge!.copyWith(fontSize: 20);
 
     return Center(
         child: Column(
       children: [
-        const Text("Choose a Map"),
+        Text("Choose a Map", style: optionTextStyle),
+        const SizedBox(
+          height: 20,
+        ),
         for (var map in mapList)
           ElevatedButton(
             onPressed: () {
@@ -95,7 +98,7 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
         const SizedBox(
           height: 20,
         ),
-        const Text("Only positions on in-game map?"),
+        Text("Only positions on in-game map?", style: optionTextStyle),
         Checkbox(value: onMapOnly, onChanged: setOnMapOnly),
         const SizedBox(
           height: 20,
@@ -107,7 +110,7 @@ class _LandingPointChooserState extends State<LandingPointChooser> {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Text(selectedLandingPoint!.name, style: textStyle),
+                  Text(selectedLandingPoint!.name, style: chosenPointTextStyle),
                 ],
               ),
             ),
