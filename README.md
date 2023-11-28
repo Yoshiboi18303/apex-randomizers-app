@@ -12,8 +12,4 @@ Sadly, no. I did not target Windows for this, and it looks ugly on Windows compa
 
 ## Installation
 
-The app is not on the Play Store yet. I will do that in the near future, when I rack up enough money to pay Google for it. For now, use the APK _(Android Package Kit)_ in the [latest release](https://github.com/Yoshiboi18303//releases) to manually install it.
-
-> Download APK
-> Locate and run it
-> Open the app
+Not done yet, so no download link yet.

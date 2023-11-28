@@ -1,4 +1,5 @@
 import "dart:math";
+import "package:apex_legend_chooser/lists.dart";
 import "package:flutter/material.dart";
 import "package:url_launcher/url_launcher.dart";
 
@@ -20,43 +21,6 @@ class _LegendChooserState extends State<LegendChooser> {
     true, // Recon
     true, // Support
     true, // Controller
-  ];
-  var legendList = <List<Legend>>[
-    [
-      Legend("https://apexlegends.fandom.com/wiki/Bangalore", "Bangalore"),
-      Legend("https://apexlegends.fandom.com/wiki/Fuse", "Fuse"),
-      Legend("https://apexlegends.fandom.com/wiki/Ash", "Ash"),
-      Legend("https://apexlegends.fandom.com/wiki/Mad_Maggie", "Mad Maggie"),
-      Legend("https://apexlegends.fandom.com/wiki/Ballistic", "Ballistic"),
-    ],
-    [
-      Legend("https://apexlegends.fandom.com/wiki/Pathfinder", "Pathfinder"),
-      Legend("https://apexlegends.fandom.com/wiki/Wraith", "Wraith"),
-      Legend("https://apexlegends.fandom.com/wiki/Octane", "Octane"),
-      Legend("https://apexlegends.fandom.com/wiki/Revenant", "Revenant"),
-      Legend("https://apexlegends.fandom.com/wiki/Horizon", "Horizon"),
-      Legend("https://apexlegends.fandom.com/wiki/Valkyrie", "Valkyrie"),
-    ],
-    [
-      Legend("https://apexlegends.fandom.com/wiki/Bloodhound", "Bloodhound"),
-      Legend("https://apexlegends.fandom.com/wiki/Crypto", "Crypto"),
-      Legend("https://apexlegends.fandom.com/wiki/Seer", "Seer"),
-      Legend("https://apexlegends.fandom.com/wiki/Vantage", "Vantage"),
-    ],
-    [
-      Legend("https://apexlegends.fandom.com/wiki/Gibraltar", "Gibraltar"),
-      Legend("https://apexlegends.fandom.com/wiki/Lifeline", "Lifeline"),
-      Legend("https://apexlegends.fandom.com/wiki/Mirage", "Mirage"),
-      Legend("https://apexlegends.fandom.com/wiki/Loba", "Loba"),
-      Legend("https://apexlegends.fandom.com/wiki/Newcastle", "Newcastle"),
-      Legend("https://apexlegends.fandom.com/wiki/Conduit", "Conduit"),
-    ],
-    [
-      Legend("https://apexlegends.fandom.com/wiki/Caustic", "Caustic"),
-      Legend("https://apexlegends.fandom.com/wiki/Wattson", "Wattson"),
-      Legend("https://apexlegends.fandom.com/wiki/Rampart", "Rampart"),
-      Legend("https://apexlegends.fandom.com/wiki/Catalyst", "Catalyst"),
-    ],
   ];
 
   Legend? selectedLegend;

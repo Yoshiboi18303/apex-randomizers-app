@@ -3,6 +3,7 @@ import "dart:math";
 import "package:flutter/material.dart";
 
 import "../components/info_button.dart";
+import "../lists.dart";
 import "../models/map.dart";
 import "../models/landing_point.dart";
 
@@ -14,15 +15,6 @@ class LandingPointChooser extends StatefulWidget {
 }
 
 class _LandingPointChooserState extends State<LandingPointChooser> {
-  var mapList = <Map>[
-    Map("Kings Canyon", "https://apexlegends.fandom.com/wiki/Kings_Canyon", []),
-    Map("World's Edge", "https://apexlegends.fandom.com/wiki/World%27s_Edge",
-        []),
-    Map("Olympus", "https://apexlegends.fandom.com/wiki/Olympus", []),
-    Map("Storm Point", "https://apexlegends.fandom.com/wiki/Storm_Point", []),
-    Map("Broken Moon", "https://apexlegends.fandom.com/wiki/Broken_Moon", []),
-  ];
-
   Map? selectedMap;
   LandingPoint? selectedLandingPoint;
   bool onMapOnly = false;
